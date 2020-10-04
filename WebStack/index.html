@@ -5,20 +5,31 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Latest Trending News</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
 	<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<nav id="header-nav" class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-brand">
-				<a href="index.html">
-					<h1 style="color: white">Latest Trending News</h1>
-				</a>
-			</div>
-    	</div>
-  	</nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navimg navbar-brand" href="#"><img src="img/jd_news.png" height="70px" width="70px"></a>
+      <a id="navpad" class="navpad navbar-brand" href="#">Latest Trending News</a>
+    </div>
+    <ul id="navpad" class="navpad nav navbar-nav">
+      <li><a href="#">India</a></li>
+      <li><a href="#">World</a></li>
+    </ul>
+    <form id="navpad" class="navbar-form navbar-right" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="navpad form-control" placeholder="Search" name="search">
+      </div>
+      <button type="submit" class="navpad btn btn-default">Submit</button>
+    </form>
+  </div>
+</nav>
   	<header>
   		<div id="backimg" style="background-image: url('img/news3.png')">
   		<div class="overlap"></div>
