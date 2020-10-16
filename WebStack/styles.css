@@ -90,3 +90,11 @@ aside {
 	padding-top: 10px;
 	padding-left: 180px;
 }
+
+.box_model1 {
+   width: 720px;
+   Height: 70px;
+   padding: 10px 10px;
+   border:10px solid powderblue;
+   margin: 15px 05px;
+}

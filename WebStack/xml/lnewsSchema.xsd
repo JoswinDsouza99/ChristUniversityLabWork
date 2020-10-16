@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ltn:schema xmlns:ltn="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/lnewsSchema" elementFormDefault="qualified">
+<ltn:element name="news">
+	<ltn:complexType>
+		<ltn:sequence>
+			<ltn:element name="Content" maxOccurs="unbounded">
+				<ltn:complexType>
+					<ltn:sequence>
+						<ltn:element name="Category" type="ltn:string" />
+						<ltn:element name="Headlines" type="ltn:string" />
+						<ltn:element name="Date">
+							<ltn:simpleType>
+								<ltn:restriction base="ltn:date">
+								<ltn:minInclusive value="2020-01-01"/>
+                  				<ltn:maxInclusive value="2020-12-31"/>
+								</ltn:restriction>
+							</ltn:simpleType>
+						</ltn:element>
+					</ltn:sequence>
+				</ltn:complexType>
+			</ltn:element>
+			<ltn:element name="User" maxOccurs="unbounded">
+				<ltn:complexType>
+					<ltn:sequence>
+						<ltn:element name="U_id" type="ltn:int"/>
+						<ltn:element name="Name" type="ltn:string"/>
+						<ltn:element name="Email" type="ltn:string"/>
+					</ltn:sequence>
+				</ltn:complexType>
+			</ltn:element>
+		</ltn:sequence>
+	</ltn:complexType>
+</ltn:element>
+</ltn:schema>
