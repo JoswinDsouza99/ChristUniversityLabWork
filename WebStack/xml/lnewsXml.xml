@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="ltnStylesheet.xsl"?>
-<p:news xmlns:p="http://www.example.org/lnewsSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/lnewsSchema lnewsSchema.xsd ">
-  <p:Content>
-    <p:Category>p:Local</p:Category>
-    <p:Headlines>p:ONEPLUS BUDS Z, BULLETS WIRELESS Z BASS EDITION AND POWER BANK ANNOUNCED: ALL YOU NEED TO KNOW</p:Headlines>
-    <p:Date>2020-10-16</p:Date>
-  </p:Content>
-  <p:Content>
-    <p:Category>p:Sports</p:Category>
-    <p:Headlines>p:IPL 2020 Points Table: Bottom-Placed KXIP Record 2nd Win Of The Season</p:Headlines>
-    <p:Date>2020-10-15</p:Date>
-  </p:Content>
-  <p:Content>
-    <p:Category>p:Business</p:Category>
-    <p:Headlines>p:OnePlus 8 price cut after OnePlus 8T launch, here are new prices for both variants</p:Headlines>
-    <p:Date>2020-10-14</p:Date>
-  </p:Content>
-  <p:User>
-    <p:U_id>1</p:U_id>
-    <p:Name>p:Jack</p:Name>
-    <p:Email>p:jack@gmail.com</p:Email>
-  </p:User>
-    <p:User>
-    <p:U_id>2</p:U_id>
-    <p:Name>p:Jones</p:Name>
-    <p:Email>p:jones@gmail.com</p:Email>
-  </p:User>
-    <p:User>
-    <p:U_id>3</p:U_id>
-    <p:Name>p:Jill</p:Name>
-    <p:Email>p:jill@gmail.com</p:Email>
-  </p:User>
-    <p:User>
-    <p:U_id>4</p:U_id>
-    <p:Name>p:James</p:Name>
-    <p:Email>p:james@gmail.com</p:Email>
-  </p:User>
-</p:news>
+<news xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="lnewsSchema.xsd">
+  <Content>
+    <Category>Local</Category>
+    <Headlines>ONEPLUS BUDS Z, BULLETS WIRELESS Z BASS EDITION AND POWER BANK ANNOUNCED: ALL YOU NEED TO KNOW</Headlines>
+    <Date>2020-10-16</Date>
+  </Content>
+  <Content>
+    <Category>Sports</Category>
+    <Headlines>IPL 2020 Points Table: Bottom-Placed KXIP Record 2nd Win Of The Season</Headlines>
+    <Date>2020-10-15</Date>
+  </Content>
+  <Content>
+    <Category>Business</Category>
+    <Headlines>OnePlus 8 price cut after OnePlus 8T launch, here are new prices for both variants</Headlines>
+    <Date>2020-10-14</Date>
+  </Content>
+  <User>
+    <U_id>1</U_id>
+    <Name>Jack</Name>
+    <Email>jack@gmail.com</Email>
+  </User>
+    <User>
+    <U_id>2</U_id>
+    <Name>Jones</Name>
+    <Email>jones@gmail.com</Email>
+  </User>
+    <User>
+    <U_id>3</U_id>
+    <Name>Jill</Name>
+    <Email>jill@gmail.com</Email>
+  </User>
+    <User>
+    <U_id>4</U_id>
+    <Name>James</Name>
+    <Email>james@gmail.com</Email>
+  </User>
+</news>

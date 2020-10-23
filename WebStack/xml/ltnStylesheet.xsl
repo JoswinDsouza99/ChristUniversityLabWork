@@ -1,67 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:template match="/">
 		<html>
             <head>
-                <style>
-            div
-            {
-                text-align:center;
-                height:500px; 
-                width:48%;
-            }
-            td,th
-            {
-                font-size:larger;
-                padding:20px;
-                text-align:center !important;
-            }
-                </style>
+            
             </head>
             <body>
-                <h1 style="text-align:center;">Latest Trending News</h1>
+                <h1 style="text-align:center; margin-bottom:50px;">Latest Trending News</h1>
                 
-                <div style="float:left;">
-                    <h2>List of News</h2>
+                <div>
+                    <h2 style="text-align:center;">List of News</h2>
                     <table border="2" align="center">
-                        <tr bgcolor="#9acd32">
+                        <tr bgcolor="#E5E4E2">
                             <th style="text-align:left">Category</th>
                             <th style="text-align:left">Headlines</th>
                             <th style="text-align:left">Date</th>
                         </tr>
-                        <xsl:for-each select="p:news/p:Content">
+                        <xsl:for-each select="news/Content">
                                 <tr>
                                     <td>
-                                        <xsl:value-of select="p:Category"/>
+                                        <xsl:value-of select="Category"/>
                                     </td>
                                     <td>
-                                        <xsl:value-of select="p:Headlines"/>
+                                        <xsl:value-of select="Headlines"/>
                                     </td>
                                     <td>
-                                        <xsl:value-of select="p:Date"/>
+                                        <xsl:value-of select="Date"/>
                                     </td>
                                 </tr>
                         </xsl:for-each>
                     </table>
                 </div>
 
-                <div style="float:left;height:550px;">
-                    <h2>List of all Users</h2>
+                <div>
+                    <h2 style="text-align:center;">List of all Users</h2>
                     <table border="2"  align="center">
-                        <tr bgcolor="#9acd32">
-                            <th style="text-align:left">Employee Name</th>
-                            <th style="text-align:left">Salary</th>
+                        <tr bgcolor="#E5E4E2">
+                            <th style="text-align:left">User ID</th>
+                            <th style="text-align:left">Name</th>
+                            <th style="text-align:left">Email</th>
                         </tr>
-                        <xsl:for-each select="p:news/p:User">
+                        <xsl:for-each select="news/User">
                             <tr>
                                 <td>
-                                    <xsl:value-of select="p:U_id"/>
+                                    <xsl:value-of select="U_id"/>
                                 </td>
                                 <td>
-                                    <xsl:value-of select="p:Name"/>
+                                    <xsl:value-of select="Name"/>
                                 </td>
                                 <td>
-                                    <xsl:value-of select="p:Email"/>
+                                    <xsl:value-of select="Email"/>
                                 </td>
                             </tr>
                         </xsl:for-each>

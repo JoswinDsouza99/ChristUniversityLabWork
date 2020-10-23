@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body
+        {
+            background: linear-gradient(blue,white)fixed;
+        }
+        .container
+        {
+            width: 53%;
+            margin-left: 10%;
+            margin-top: 2%;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 2em;
+            background-color: blanchedalmond;
+            padding-left: 27%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .header
+        {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .lbl
+        {
+            font-size: 1.2em;
+        }
+        td
+        {
+            width: 50%;
+            padding-top: 2%;
+        }
+        input,textarea
+        {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function validate_fileupload(fileName)
+        {
+            var file_extension = fileName.split('.').pop().toLowerCase(); 
+
+            if(file_extension != "jpg")
+            {
+                alert("Invalid file Format.Only JPG allowed.");
+                document.getElementById("File_proof").value="";
+            }
+        }
+        function validate()
+        {
+            var ele = document.getElementsByName('AC_Type'); 
+            var cnt=0;
+            var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
+            var phoneformat=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ ;
+            
+            for(i = 0; i < ele.length; i++)
+            { 
+                if(ele[i].checked) 
+                cnt=cnt+1; 
+            } 
+            if(!(document.getElementById("ID_Text").value>0) || document.getElementById("ID_Text").value == "")
+            {
+                alert("ID should be an positive number.");
+                document.getElementById("ID_Text").style.border="2px solid red";
+            }
+            else if(document.getElementById("Name_Text").value%10 == 0 || document.getElementById("Name_Text").value == "")
+            {
+                document.getElementById("ID_Text").style.border="none";
+                alert("Enter Name Correctly.");
+                document.getElementById("Name_Text").style.border="2px solid red";
+            }
+            else if(cnt==0)
+            {
+                document.getElementById("Name_Text").style.border="none";
+                alert("Please select an Account Type.");
+            }
+            else if(document.getElementById("Address_Text").value == "")
+            {
+                alert("Please enter your Address.");
+                document.getElementById("Address_Text").style.border="2px solid red";
+            }
+            else if(!mailformat.test(document.getElementById("Email_Text").value))
+            {
+                document.getElementById("Address_Text").style.border="none";
+                alert("EmailId format incorrect.");
+            }   
+            else if(!phoneformat.test(document.getElementById("Phone_Text").value))
+            {
+                alert("Enter Valid Phone No.");
+            }
+            else if(document.getElementById("File_proof").value == "")
+            {
+                alert("Please add a Address Proof.");
+            }
+            else
+            {
+                alert("All details Ok.");
+            }
+        }
+    </script>
+    <h2 class="header">Bank Registration Form</h2>
+    <div class="container">
+        <form action="#">
+            <table>
+                <tr>
+                    <td><span class="lbl">ID</span></td>
+                    <td><input type="text" id="ID_Text" placeholder="ID"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Name</span></td>
+                    <td><input type="text" id="Name_Text" placeholder="Name"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Account Type</span></td>
+                    <td>
+                        <input type="radio" id="AC_cr" name="AC_Type" value="Current">
+                        <label for="AC_cr">Current</label>
+                        <input type="radio" id="AC_sv" name="AC_Type" value="Savings">
+                        <label for="AC_sv">Savings</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Address</span></td>
+                    <td><textarea id="Address_Text" placeholder="Address"></textarea></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Email ID</span></td>
+                    <td><input type="text" id="Email_Text" placeholder="Eg: abc@example.com"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Phone No.</span></td>
+                    <td><input type="text" id="Phone_Text" placeholder="Phone No."/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Address Proof</span></td>
+                    <td><input type="file" id="File_proof" onchange="validate_fileupload(this.value)"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="validate()">Submit</button></td>               
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
