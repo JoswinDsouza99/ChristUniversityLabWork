@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function display()
+        {
+            var base=document.getElementById("test");
+            var person=base.getElementsByTagName("employee")[0];
+            var name=person.getElementsByTagName("ename")[0].firstChild.data;
+            alert("Name:"+name);
+
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <xml
+    
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Employee Details</h1>
+        <button type="button" onclick="loadXML()">Get Employee Details</button>
+        <div id="test">
+            <br><br>
+            Some Text
+        </div>
+        <script>
+            function loadXML()
+            {
+                var xhttp=new XMLHttpRequest();
+                xhttp.onreadystatechange=function()
+     

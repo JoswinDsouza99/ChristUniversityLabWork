@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="emsStylesheet.xsl"?>
 <Company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="lnewsSchema.xsd">
-  <Employee>
+  <Employee >
     <Emp-ID>1</Emp-ID>
     <Emp-name>Jack</Emp-name>
     <Emp-age>34</Emp-age>

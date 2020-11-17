@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration for daily news</title>
+    <style>
+        body
+        {
+            background: linear-gradient(rgb(255, 123, 0),rgb(252, 255, 94))fixed;
+        }
+        .container
+        {
+            width: 53%;
+            margin-left: 10%;
+            margin-top: 2%;
+            height: 100%;
+            border: 1px solid black;
+            border-radius: 1em;
+            background-color: rgb(205, 255, 159);
+            padding-left: 27%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .header
+        {
+            color: rgb(0, 0, 0);
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .lbl
+        {
+            font-size: 1.3em;
+        }
+        td
+        {
+            width: 50%;
+            padding-top: 2%;
+        }
+        input,textarea
+        {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function validate()
+        {
+            var ele = document.getElementsByName('Aoi'); 
+            var cnt=0;
+            var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
+            var phoneformat=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ ;
+            
+            for(i = 0; i < ele.length; i++)
+            { 
+                if(ele[i].checked) 
+                cnt=cnt+1; 
+            } 
+            if(document.myForm.Name_Text.value == "")
+            {
+                alert("Enter Name Correctly.");
+                document.myForm.Name_Text.style.border="2px solid red";
+            }
+            else if(!mailformat.test(document.myForm.Email_Text.value))
+            {
+                document.myForm.Name_Text.style.border="none";
+                alert("EmailId format incorrect.");
+                document.myForm.Email_Text.style.border="2px solid red";
+            }
+            else if(document.myForm.Date_Text.value == "")
+            {
+                document.myForm.Email_Text.style.border="none";
+                alert("Please Enter date of birth.");
+                document.myForm.Date_Text.style.border="2px solid red";
+            }  
+            else if(cnt==0)
+            {
+                document.myForm.Date_Text.style.border="none";
+                alert("Please select an Area of Interest.");
+            }
+            else if(document.myForm.City_Text.value == "")
+            {
+                alert("Please enter your City.");
+                document.myForm.City_Text.style.border="2px solid red";
+            }
+            else if(!phoneformat.test(document.myForm.Phone_Text.value))
+            {
+                document.myForm.City_Text.style.border="none";
+                alert("Enter Valid Phone No.");
+            }
+            else
+            {
+                alert("All details Ok.");
+            }
+        }
+    </script>
+    <h2 class="header">Registration for Daily news</h2>
+    <div class="container">
+        <form action="#" name="myForm">
+            <table>
+                <tr>
+                    <td><span class="lbl">Name</span></td>
+                    <td><input type="text" id="Name_Text" placeholder="Name"/></td>
+                </tr>
+                <tr>
+                <td><span class="lbl">Email ID</span></td>
+                    <td><input type="text" id="Email_Text" placeholder="Eg: abc@example.com"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Date of Birth</span></td>
+                    <td><input type="date" id="Date_Text" placeholder="Eg: 25/11/1999"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Area of Interest</span></td>
+                    <td>
+                        <input type="radio" id="Aoi_enter" name="Aoi" value="Entertainment">
+                        <label for="Aoi_enter">Entertainment</label>
+                        <input type="radio" id="Aoi_sports" name="Aoi" value="Sports">
+                        <label for="Aoi_sports">Sports</label>
+                        <br>
+                        <input type="radio" id="Aoi_money" name="Aoi" value="Money">
+                        <label for="Aoi_money">Money</label>
+                        <input type="radio" id="Aoi_life" name="Aoi" value="LifeStyle">
+                        <label for="Aoi_life">LifeStyle</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">City</span></td>
+                    <td><input type="text" id="City_Text" placeholder="City Name"/></td>
+                </tr>
+
+                <tr>
+                    <td><span class="lbl">Phone No.</span></td>
+                    <td><input type="text" id="Phone_Text" placeholder="Phone No."/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="validate()">Submit</button></td>               
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
