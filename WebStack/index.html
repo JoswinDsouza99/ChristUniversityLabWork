@@ -22,12 +22,12 @@
       <li><a href="#">India</a></li>
       <li><a href="#">World</a></li>
     </ul>
-    <form id="navpad" class="navbar-form navbar-right" action="/action_page.php">
+    <form id="navpad" class="navbar-form navbar-right navpad nav navbar-nav" action="/action_page.php">
       <!--<div class="form-group">
         <input type="text" class="navpad form-control" placeholder="Search" name="search">
       </div>
 	  <button type="submit" class="navpad btn btn-default">Submit</button>-->
-	  <a id="js" class="navpad nav navbar-nav" href="Form_Valid.html">Register</a>
+	  <a id="js" class="navpad nav navbar-nav" href="form_js/form.html">Register</a>
 	</form>
   </div>
 </nav>
@@ -43,9 +43,9 @@
   	<div class="container">
   		<div class="row">
   			<div id="lnews">
-  				<a href="post.html">
-  				<h2>OnePlus won't bring these performance features to older phones</h2>
-  				<h3>OnePlus has confirmed that some of its new features won't be coming to older phones because of various reasons.</h3></a>
+  				<a onclick="loadXML1()">
+  				<h2>ICC Changes Test Championship Rules, India Go Down from First to Second Place</h2></a>
+  				<h3 id="demo1">The International Cricket Council (ICC) on Thursday announced changes to the ICC World Test Championship points system</h3>
   				<p class="post-meta">Posted by
             	<a href="#"><i>Joswin Dsouza</i></a>
             	Indian News reporter</p>
@@ -54,9 +54,10 @@
   		<hr>
   		 <div class="row">
   			<div id="lnews">
-  				<a href="post1.html">
-  				<h2>Jio to Offer Free IPL 2020 Live Streaming on Select Prepaid Mobile, Fibre Broadband Plans: Report</h2>
-  				<h3>Reliance Jio is reported to offer free IPL 2020 streaming to Rs. 401 and Rs. 2,599 prepaid plan subscribers.</h3></a>
+  				<a onclick="loadXML()">
+  				<h2>Switch to electric vehicles could 'end oil era': analysis</h2></a>
+  				<h3 id="demo">Emerging markets switching from petrol and diesel engines to electric vehicles (EVs) could save 
+					$250 billion</h3>
   				<p class="post-meta">Posted by
             	<a href="#"><i>Joswin Dsouza</i></a>
             	Indian News reporter</p>
@@ -102,5 +103,59 @@
 		</div>
 	</div>
 </footer>
+<script>
+	function loadXML1()
+	{
+		var xhttp=new XMLHttpRequest();
+		xhttp.onreadystatechange=function()
+		{
+			if(this.readyState==4&&this.status==200)
+			{
+				myFunction1(this);
+			}
+		};
+		xhttp.open("GET","xml/lnewsXml.xml",false);
+		xhttp.send();
+	}
+	function myFunction1(xml)
+	{
+		var i;
+		var xmlDoc=xml.responseXML;
+		var t;
+		var x=xmlDoc.getElementsByTagName("Content");
+		for(i=0;i<1;i++)
+		{
+			t =
+			x[i].getElementsByTagName("Article")[0].childNodes[0].nodeValue;
+		}
+		document.getElementById("demo1").innerHTML=t;
+	}
+	function loadXML()
+	{
+		var xhttp=new XMLHttpRequest();
+		xhttp.onreadystatechange=function()
+		{
+			if(this.readyState==4&&this.status==200)
+			{
+				myFunction(this);
+			}
+		};
+		xhttp.open("GET","xml/lnewsXml.xml",false);
+		xhttp.send();
+	}
+	function myFunction(xml)
+	{
+		var i;
+		var xmlDoc=xml.responseXML;
+		var t;
+		var x=xmlDoc.getElementsByTagName("Content");
+		for(i=2;i<3;i++)
+		{
+			t =
+			x[i].getElementsByTagName("Article")[0].childNodes[0].nodeValue;
+		}
+		document.getElementById("demo").innerHTML=t;
+	}
+</script>
 </body>
 </html>

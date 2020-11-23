@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<style>
+    th {
+        font-size: 2em;
+        text-decoration: underline;
+        padding-top: 1%;
+    }
+    td {
+        padding: 20px;
+        font-size: 1.5em;
+    }
+    body {
+        text-align: center;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News1</title>
+</head>
+<body onload="loadXML()">
+    <h3 id="demo"></h3>
+    <h4>Select your favourite topic: </h4>
+    <select id="cdemo" onchange="show()">
+        <option value="Select a Topic">Select a Topic</option>
+        <option value="enter">Entertainment</option>
+        <option value="sports">Sports</option>
+        <option value="life">Lifestyle</option>
+        <option value="money">Money</option>
+        <option value="health">Health</option>
+        <option value="auto">Auto</option>
+    </select>
+    <script>
+        function loadXML()
+        {
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function()
+            {
+                if(this.readyState==4&&this.status==200)
+                {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET","lnewsXml.xml",false);
+            xhttp.send();
+        }
+        function myFunction(xml)
+        {
+		var i;
+		var xmlDoc=xml.responseXML;
+		var t;
+		var x=xmlDoc.getElementsByTagName("Content");
+		for(i=2;i<3;i++)
+		{
+			t =
+			x[i].getElementsByTagName("Article")[0].childNodes[0].nodeValue;
+		}
+		document.getElementById("demo").innerHTML=t;
+	}
+        function show()
+        {
+            var value=document.getElementById("cdemo").value;
+            if(value!="Select a Topic")
+            {
+                document.cookie="Topic="+value+"";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@
 					<ltn:sequence>
 						<ltn:element name="Category" type="ltn:string" />
 						<ltn:element name="Headlines" type="ltn:string" />
+						<ltn:element name="Article" type="ltn:string" />
 						<ltn:element name="Date">
 							<ltn:simpleType>
 								<ltn:restriction base="ltn:date">

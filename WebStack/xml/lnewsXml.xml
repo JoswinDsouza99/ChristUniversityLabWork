@@ -3,19 +3,35 @@
 <news xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="lnewsSchema.xsd">
   <Content>
-    <Category>Local</Category>
-    <Headlines>ONEPLUS BUDS Z, BULLETS WIRELESS Z BASS EDITION AND POWER BANK ANNOUNCED: ALL YOU NEED TO KNOW</Headlines>
-    <Date>2020-10-16</Date>
+    <Category>Sports</Category>
+    <Headlines>ICC Changes Test Championship Rules, India Go Down from First to Second Place</Headlines>
+    <Article>The International Cricket Council (ICC) on Thursday announced changes to the ICC World Test Championship points 
+    system that was amended due to the COVID-19 pandemic. According to the new system, Australia jump past India to claim the 
+    top position. The Board approved a recommendation from the ICC Cricket Committee, headed by Anil Kumble, 
+    to change the competition terms for the event to determine how series affected by the global pandemic are accounted 
+    for on the points table.</Article>
+    <Date>2020-11-20</Date>
   </Content>
   <Content>
     <Category>Sports</Category>
-    <Headlines>IPL 2020 Points Table: Bottom-Placed KXIP Record 2nd Win Of The Season</Headlines>
-    <Date>2020-10-15</Date>
+    <Headlines>Formula One Expects 24-race Calendar In Next Few Years</Headlines>
+    <Article>The sport has pencilled in a record 23 for next year, dependent on developments in the COVID-19 pandemic 
+    which forced organisers to rewrite this season`s schedule and limit races to Europe and the Middle East.
+    Carey, who is handing over to former Ferrari team boss Stefano Domenicali in January while remaining as non-executive 
+    chairman of the Liberty Media-owned sport, was speaking to investors.
+    "We expect to move to a 24-race calendar in the next few years, and will probably rotate a few races so we will be able to 
+    accommodate a few new partners," said the American.</Article>
+    <Date>2020-11-20</Date>
   </Content>
   <Content>
     <Category>Business</Category>
-    <Headlines>OnePlus 8 price cut after OnePlus 8T launch, here are new prices for both variants</Headlines>
-    <Date>2020-10-14</Date>
+    <Headlines>Switch to electric vehicles could 'end oil era': analysis</Headlines>
+    <Article>Emerging markets switching from petrol and diesel engines to electric vehicles (EVs) could save 
+    $250 billion annually and slash expected growth in global oil demand by as much as 70 percent, an industry analysis showed Friday.
+    As more and more nations such as China and India look to grow their electic fleet, they are in turn reducing reliance on 
+    imported oil, with EVs forecasted to soon be cheaper to make and run than their fossil-fuel-fired cousins.
+    </Article>
+    <Date>2020-11-20</Date>
   </Content>
   <User>
     <U_id>1</U_id>
