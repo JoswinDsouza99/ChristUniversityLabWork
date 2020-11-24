@@ -32,7 +32,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration for Daily news</h2>
-                    <form method="POST" action="" name="myform">
+                    <form method="POST" action="form1.html" name="myform">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
@@ -142,23 +142,24 @@ window.onload = function ()
             //alert(AllCookies[i]);
             Temp = AllCookies[i].split('=');
             //alert(Temp);
+            console.log(Temp[0]);
             if (Temp[0] == "field1")
             {
                 document.getElementById("field1").value = Temp[1];
             }
-            if(Temp[0] == "field2")
+            if(Temp[0] == " field2")
             {   
                 document.getElementById("field2").value = Temp[1];
             }
-            if(Temp[0] == "field3")
+            if(Temp[0] == " field3")
             {   
                 document.getElementById("field3").value = Temp[1];
             }
-            if(Temp[0] == "field4")
+            if(Temp[0] == " field4")
             {   
                 document.getElementById("field4").value = Temp[1];
             }
-            if(Temp[0] == "field5")
+            if(Temp[0] == " field5")
             {   
                 document.getElementById("field5").value = Temp[1];
             }
