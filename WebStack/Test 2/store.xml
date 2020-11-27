@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ltnStylesheet.xsl"?>
+<chirst xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noStu_BranchspaceSchemaLocation="lnewsSchema.xsd">
+  <CS>
+    <Stu_Name>Joswin</Stu_Name>
+    <Stu_Branch>Software</Stu_Branch>
+    <Stu_College>Xaviers</Stu_College>
+    <Email>jos@gmail.com</Email>
+  </CS>
+    <CS>
+    <Stu_Name>James</Stu_Name>
+    <Stu_Branch>Mechanical</Stu_Branch>
+    <Stu_College>Christ University</Stu_College>
+    <Email>james@gmail.com</Email>
+  </CS>
+    <CS>
+    <Stu_Name>Jack</Stu_Name>
+    <Stu_Branch>Computers</Stu_Branch>
+    <Stu_College>Bangalore University</Stu_College>
+    <Email>jill@gmail.com</Email>
+  </CS>
+</chirst>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateways 2020 TECHOVID</title>
+    <style>
+        body
+        {
+            background: linear-gradient(rgb(255, 28, 104),rgb(241, 85, 255))fixed;
+        }
+        .container
+        {
+            width: 53%;
+            margin-left: 10%;
+            margin-top: 2%;
+            height: 100%;
+            border: 1px solid black;
+            border-radius: 1em;
+            background-color: rgb(240, 180, 255);
+            padding-left: 27%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .header
+        {
+            color: rgb(0, 0, 0);
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .lbl
+        {
+            font-size: 1.3em;
+        }
+        td
+        {
+            width: 50%;
+            padding-top: 2%;
+        }
+        input,textarea
+        {
+            border: none;
+        }
+        .title 
+        {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h2 class="header">Gateways2020</h2>
+    <h1 class="title">TECHOVID</h1>
+    <div class="container">
+        <form action="#" name="myForm">
+            <table>
+                <tr>
+                    <td><span class="lbl">Name</span></td>
+                    <td><input type="text" id="Name_Text" placeholder="Name"/></td>
+                </tr>
+                <tr>
+                <td><span class="lbl">Email ID</span></td>
+                    <td><input type="text" id="Email_Text" placeholder="Eg: abc@example.com"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Branch</span></td>
+                    <td><input type="text" id="Branch_Text" placeholder="Enter your branch"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">College/University name</span></td>
+                    <td><input type="text" id="College_Text" placeholder="College/University Name"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">State</span></td>
+                    <td><input type="text" id="State_Text" placeholder="State Name"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Age</span></td>
+                    <td><input type="text" id="Age_Text" placeholder="Enter your Age"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl" maxlength="10" pattern="\d{10}">Phone No.</span></td>
+                    <td><input type="text" id="Phone_Text" placeholder="Phone No."/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Username</span></td>
+                    <td><input type="text" id="Username_Text" placeholder="Enter prefered Username"/></td>
+                </tr>
+                <tr>
+                    <td><span class="lbl">Password</span></td>
+                    <td><input type="text" id="Password_Text" placeholder="Enter Password"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="validate()">Submit</button></td>
+                                 
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="storeValues(myForm)">setCookie</button></td>  
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script type="text/javascript">
+
+        function validate()
+        {
+            var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
+            var phoneformat=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ ;
+             // ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$
+            
+            var passcode=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/ ;
+            var alpha=/[a-z]/i ; 
+            if(!alpha.test(document.myForm.Name_Text.value))
+            {
+                alert("Enter Name Correctly.");
+                document.myForm.Name_Text.style.border="2px solid red";
+            }
+            else if(!mailformat.test(document.myForm.Email_Text.value))
+            {
+                document.myForm.Name_Text.style.border="none";
+                alert("EmailId format incorrect.");
+                document.myForm.Email_Text.style.border="2px solid red";
+            }
+            else if(document.myForm.Branch_Text.value == "")
+            {
+                document.myForm.Email_Text.style.border="none";
+                alert("Please Enter your branch.");
+                document.myForm.Branch_Text.style.border="2px solid red";
+            }  
+            else if(document.myForm.College_Text.value == "")
+            {
+                document.myForm.Branch_Text.style.border="none";
+                alert("Please enter your College/University");
+            }
+            else if(document.myForm.State_Text.value == "")
+            {
+                document.myForm.Branch_Text.style.border="none";
+                alert("Please enter your State.");
+                document.myForm.State_Text.style.border="2px solid red";
+            }
+            else if(document.myForm.Age_Text.value == "")
+            {
+                document.myForm.State_Text.style.border="none";
+                alert("Please enter your Age.");
+                document.myForm.Age_Text.style.border="2px solid red";
+            }
+            else if(!phoneformat.test(document.myForm.Phone_Text.value))
+            {
+                document.myForm.Age_Text.style.border="none";
+                alert("Enter Valid Phone No.");
+                document.myForm.Phone_Text.style.border="2px solid red";
+            }
+            else if(document.myForm.Username_Text.value == "")
+            {
+                document.myForm.Phone_Text.style.border="none";
+                alert("Please enter your Username.");
+                document.myForm.Username_Text.style.border="2px solid red";
+            }
+            else if(!passcode.test(document.myForm.Password_Text.value))
+            {
+                document.myForm.Username_Text.style.border="none";
+                alert("Please enter your Password.");
+            }
+            else
+            {
+                alert("All details Ok.");
+            }
+        }
+
+    var today = new Date();
+    var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+    function setCookie(name, value)
+    {
+     document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+    }
+
+    function storeValues(form)  
+  {
+    setCookie("Username_Text", form.Username_Text.value);
+    setCookie("Password_Text", form.Password_Text.value);
+    return true;
+  }
+    </script>
+</body>
+</html>

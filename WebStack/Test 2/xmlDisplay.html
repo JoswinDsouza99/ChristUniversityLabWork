@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<style>
+    body {
+        text-align: center;
+    }
+    table,tr {
+        text-align: center;
+        padding-left: 18%;
+        font-size: 1.2em;
+        margin-left: 22%;
+        margin-top: 2em;
+    }
+    th,td
+    {
+     border:1px solid red;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+    <h1>Students who have participated</h1>
+    <button type="button" onclick="loadXML()">Show Details</button>
+    <br><br>
+    <table id="demo"></table>
+    <script>
+        function loadXML()
+        {
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function()
+            {
+                if(this.readyState==4&&this.status==200)
+                {
+                    myFunction(this);
+                }
+            };
+            xhttp.open("GET","store.xml",false);
+            xhttp.send();
+        }
+        function myFunction(xml)
+        {
+            var i;
+            var xmlDoc=xml.responseXML;
+            var t="<tr><th>Student</th><th>University</th></tr>";
+            var x=xmlDoc.getElementsByTagName("CS");
+            for(i=0;i<x.length;i++)
+            {
+                t +="<tr><td>" +
+                x[i].getElementsByTagName("Stu_Name")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("Stu_College")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML=t;
+        }
+    </script>
+</body>
+</html>
