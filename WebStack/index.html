@@ -61,8 +61,25 @@
   				<p class="post-meta">Posted by
             	<a href="#"><i>Joswin Dsouza</i></a>
             	Indian News reporter</p>
-  			</div>
-  		</div>
+			  </div>
+			  <section style="margin-top: 2%;">
+
+				<!-- News Records Button -->
+				<div style="text-align: center;">
+					<button type="button" onclick="Displaydata('News')" class="btn btn-primary btn-lg">Show more headlines</button>
+					<br><br>
+				</div>
+			
+				<!-- Records Table -->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+					<h3 id="records" align="center">
+            
+					</h3>
+				</div>
+			
+			  </section>
+		  </div>
+		  
 		  <hr>
 		  <div style="text-align: center;">
 			  <a href="xml/lnewsXml.xml">
@@ -155,6 +172,31 @@
 			x[i].getElementsByTagName("Article")[0].childNodes[0].nodeValue;
 		}
 		document.getElementById("demo").innerHTML=t;
+	}
+
+	function Displaydata(Choice) 
+    {
+        if (Choice=='News')
+        {
+          $(function () 
+          {
+    
+              //var tr = null;
+              $.getJSON('js/news.json', function (data)
+              {
+                  //document.getElementById("records").innerHTML = tr;
+                  $.each(data.News, function (i, f) 
+                  {
+                      // if (f.Category == cat) 
+                      // {
+                          var tblRow = "<br>" + f.Headlines + "<br>"
+                          $(tblRow).appendTo("#records");
+
+                      // }
+                  });
+              });
+          });      
+		}
 	}
 </script>
 </body>
