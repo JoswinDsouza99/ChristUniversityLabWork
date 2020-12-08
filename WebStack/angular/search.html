@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="filter_search.js"></script>
+    <link href="filter.css" rel="stylesheet">
+</head>
+<body ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+        <h2>Find the news you want!</h2>
+        Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
+        <br \>
+        <br \>
+
+        Search:<input type="text" placeholder="Seach News" ng-model="Search" />
+        <br \>
+        <br \>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Headlines</th>
+                <th>Date</th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="new in news | limitTo:rowlimit |filter:Search | orderBy:'Date' ">
+                    <td>{{new.Category | uppercase}}</td>
+                    <td>{{new.Headlines | lowercase}}</td>
+                    <td>{{new.Date | date:"dd/MM/yyyy"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

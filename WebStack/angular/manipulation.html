@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="mani_news.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+    <h2 style="text-align: center;"> Manipulate News</h2>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Index</th>
+            <th>PID</th>
+            <th>CATEGORY</th>
+            <th>HEADLINES</th>
+            <th>DATE</th>
+            <th>OPTIONS</th>
+        </tr>
+        <tr ng-repeat="new in listNews">
+            <td>{{$index}}</td>
+            <td>{{new.id}}</td>
+            <td>{{new.Category}}</td>
+            <td>{{new.Headlines}}</td>
+            <td>{{new.Date | date:"dd/MM/yyyy"}}</td>
+            <td>
+                <a href="#" ng-click="delete()">Delete</a> |
+                <a href="#" ng-click="edit(new.id)">Edit</a>
+            </td>
+        </tr>
+    </table>
+    <h3>News Information</h3>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>ID</td>
+            <td><input type="text" ng-model="id"></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td><input type="text" ng-model="Category"></td>
+        </tr>
+        <tr>
+            <td>Headlines</td>
+            <td><input type="text" ng-model="Headlines"></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="text" ng-model="Date"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="button" value="ADD" ng-click="add()">
+            <input type="button" value="SAVE" ng-click="save()"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
